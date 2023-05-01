@@ -7,7 +7,7 @@ class User_reg_send(BaseModel):
     @validator('password')
     def check_password(cls, password):
         if len(password) < 1:
-            raise ValueError(Error_msg.WRONG_PASSWORD.value)
+            raise ValueError(Error_msg.WRONG_PASSWORD.value) # The requirements for the desired parameter values were not described (len(psw) - ?)
         else:
             return password
 
@@ -17,7 +17,7 @@ class User_reg_get_info(BaseModel):
     @validator('token')
     def check_token(cls, token):
         if len(token) < 1:
-            raise ValueError(Error_msg.WRONG_TOKEN.value)
+            raise ValueError(Error_msg.WRONG_TOKEN.value) # The requirements for the desired parameter values were not described
         else:
             return token
     @validator('id')
@@ -30,7 +30,7 @@ class User_get_token(BaseModel):
     @validator('token')
     def check_token(cls, token):
         if len(token) < 1:
-            raise ValueError(Error_msg.WRONG_TOKEN.value)
+            raise ValueError(Error_msg.WRONG_TOKEN.value) # The requirements for the desired parameter values were not described
 
 class User_reg_error(BaseModel):
     error: str
@@ -46,7 +46,7 @@ class User_create_info(BaseModel):
     @validator('id')
     def check_id(cls, id):
         if int(id) < 0:
-            raise ValueError(Error_msg.WRONG_ID.value)
+            raise ValueError(Error_msg.WRONG_ID.value) # The requirements for the desired parameter values were not described (str(id) - ?)
 
 class User_update(BaseModel):
     name: str

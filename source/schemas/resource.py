@@ -9,7 +9,7 @@ class Data(BaseModel):
     id: int
     name: str
     year: int
-    color: Color
+    color: Color #color validator
     pantone_value: str
     @validator('year')
     def check_year(cls, year):
@@ -20,7 +20,7 @@ class Data(BaseModel):
 
     @validator('id')
     def check_id(cls, id):
-        if id < 0:
+        if id < 0: # The requirements for the desired parameter values were not described
             raise ValueError(Error_msg.WRONG_ID.value)
         else:
             return id
@@ -28,7 +28,7 @@ class Data(BaseModel):
 
 
 class Support(BaseModel):
-    url: HttpUrl
+    url: HttpUrl #httpUrl validator
     text: str
 
 class Resource(BaseModel):
