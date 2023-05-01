@@ -26,10 +26,6 @@ class User(BaseModel):
     data: Data
     support: Support
 
-class User_update(BaseModel):
-    name: str
-    job: str
-    updatedAt: str
 
 class Users_list(BaseModel):
     page: int
