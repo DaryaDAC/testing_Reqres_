@@ -13,5 +13,10 @@ PATH_REGISTER = "api/register"
 PATH_LOGIN = "api/login"
 PATH_UPDATE_USER = "api/users/2"
 
+#report_path
+PATH_REPORT_USERS = "/home/darya/PycharmProjects/testing_Reqres/tests_req/reports/users_report/"
+PATH_REPORT_RESOURCES = "/home/darya/PycharmProjects/testing_Reqres/tests_req/reports/resources_report/"
+PATH_REPORT_REGISTRATION = "/home/darya/PycharmProjects/testing_Reqres/tests_req/reports/registration_report/"
+
 
 

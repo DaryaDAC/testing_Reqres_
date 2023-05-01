@@ -1,6 +1,6 @@
 from pydantic import BaseModel, validator, ValidationError, HttpUrl, EmailStr
 from pydantic.types import List
-from source.Enums import Error_msg
+from source.Enums import Error_msg_user as Error_msg
 
 class Data(BaseModel):
     id: int
@@ -14,6 +14,12 @@ class Data(BaseModel):
             raise ValueError(Error_msg.WRONG_ID.value)
         else:
             return id
+    @validator('first_name')
+    def check_name(cls, first_name):
+        if " " in first_name:
+            raise ValueError(Error_msg.WRONG_FIRST_NAME)
+        else:
+            return first_name
 class Not_Data(BaseModel):
     pass
 

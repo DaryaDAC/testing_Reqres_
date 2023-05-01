@@ -1,7 +1,6 @@
 import requests
-import config_path as path
-from source.schemas.user_schema import User, Users_list, Not_Users
-import json
+from tests_req import config_path as path
+
 
 NUMBER_OF_RESOURCES = (requests.get(url=(path.SERVICE_DOMAIN + path.PATH_LIST_RESOURCE)).json())["total"]
 

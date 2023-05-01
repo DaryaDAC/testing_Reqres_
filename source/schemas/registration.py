@@ -1,5 +1,4 @@
-from pydantic import BaseModel, validator, ValidationError, EmailStr
-from pydantic.types import List
+from pydantic import BaseModel, validator, EmailStr
 from source.Enums import Error_msg_registration as Error_msg
 
 class User_reg_send(BaseModel):
@@ -21,6 +20,10 @@ class User_reg_get_info(BaseModel):
             raise ValueError(Error_msg.WRONG_TOKEN.value)
         else:
             return token
+    @validator('id')
+    def check_id(cls, id):
+        if id < 0:
+            raise ValueError(Error_msg.WRONG_ID.value)
 
 class User_get_token(BaseModel):
     token:str
@@ -40,6 +43,10 @@ class User_create_info(BaseModel):
     job: str
     id: str
     createdAt: str
+    @validator('id')
+    def check_id(cls, id):
+        if int(id) < 0:
+            raise ValueError(Error_msg.WRONG_ID.value)
 
 class User_update(BaseModel):
     name: str

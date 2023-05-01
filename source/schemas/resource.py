@@ -2,7 +2,7 @@ from pydantic import BaseModel, validator, ValidationError, HttpUrl
 from pydantic.types import List
 from pydantic.color import Color
 import datetime
-from source.Enums import Error_msg
+from source.Enums import Error_msg_resource as Error_msg
 
 
 class Data(BaseModel):
