@@ -44,6 +44,7 @@ class Users_list(BaseModel):
 class Not_Users(BaseModel):
     pass
 
+
 class Not_Users_list(BaseModel):
     page: int
     per_page: int
